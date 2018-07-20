@@ -1,1 +1,44 @@
-This  is  New Entry for testingbthe script 
+<!DOCTYPE>
+<html ng-app= "myApp">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<title>CotactList APP </title>
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+	<h1>CONTACTLIST APP</h1>
+    <table class="table">
+    	<thead>
+    		<tr>
+    		<th>name</th>
+    		<th>email</th>
+    		<th>number</th>	
+    		</tr>
+    	</thead>
+
+        <tr>
+                <td><input class="form-controll" ng-model="contact.name"></td>
+            	<td><input class="form-controll" ng-model="contact.email"></td>
+            	<td><input class="form-controll" ng-model="contact.number"></td>
+            	<td><button class="btn btn-primary" ng-click ="addContact()">Add data</button></td>
+            	<td><button class="btn btn-info" ng-click ="update()">update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click ="deselect()">clear</button></td>
+            </tr>
+        </tr>	
+     
+
+        <tr ng-repeat="contact in contactlist">
+          		<td>{{contact.name}}</td>
+          		<td>{{contact.email}}</td>
+          		<td>{{contact.number}}</td>  
+          		<td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+          		<td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>  	
+         </tr>
+    </table>
+
+    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+	<script src="controllers/controller.js"></script>
+</body>
+</html>
+
